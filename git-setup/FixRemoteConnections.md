@@ -110,8 +110,7 @@ Run the commands below. If you run into any errors along the way, go back to [Di
     ```bash
     git merge upstream/master
     ```
-    NOTE: after running this merge command, git may tell you that you have a **merge conflict** that you need to resolve. I would like to create a document detailing how to resolve merge conflicts, but for right now you will have to follow online tutorials to see how it's done. One word of advice for resolving merge conflicts: you will likely want to accept the *incoming* changes.
-    TODO: could you get other errors? rebase. needs further testing
+    NOTE: after running this merge command, git may tell you that you have a **merge conflict** that you need to resolve. GitHub has good tutorial [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line) on how to resolve merge conflicts. One word of advice for resolving merge conflicts: you will likely want to accept the *incoming* changes (i.e. the changes that were fetched from the upstream).
 
  4. Merge back in any uncommitted changes that were stashed:
 
