@@ -110,7 +110,16 @@ Run the commands below. If you run into any errors along the way, go back to [Di
     ```bash
     git merge upstream/master
     ```
-    NOTE: after running this merge command, git may tell you that you have a **merge conflict** that you need to resolve. GitHub has good tutorial [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line) on how to resolve merge conflicts. One word of advice for resolving merge conflicts: you will likely want to accept the *incoming* changes (i.e. the changes that were fetched from the upstream).
+    **IMPORTANT**: after running this merge command, it may fail with the message `fatal: refusing to merge unrelated histories`. If this is the case, you will need to rerun the merge command above with the flag `--allow-unrelated-histories` like so:
+    ```bash
+    git merge --allow-unrelated-histories upstream/master
+    ```
+    You will likely need resolve a merge conflict after doing this. See the note below for info on that. After resolving the merge conflict, merging again with the normal merge command should state that you are already up-to-date.
+
+    **IMPORTANT**: after running this merge command, git may tell you that you have a **merge conflict** that you need to resolve. GitHub has good tutorial [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line) on how to resolve merge conflicts. Resolving the merge conflict using the VSCode merge editor is also much more convenient than resolving it in the terminal. Some advice for resolving merge conflicts: 
+    - You will likely want to accept the *incoming* changes (i.e. the changes that were fetched from the upstream) if those changes don't erase your work. 
+    - You will likely want to accept the *current* changes (i.e. your personal changes) if the incoming changes would erase your work.
+    - Don't forget to commit the merge once it has been resolved!
 
  4. Merge back in any uncommitted changes that were stashed:
 
